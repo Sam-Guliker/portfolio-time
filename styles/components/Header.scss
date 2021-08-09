@@ -1,0 +1,17 @@
+.header {
+
+    @include media('>phone') {
+        padding: to-rem(20px) 0;
+    }
+
+    .auth {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .navigation-group {
+        display: flex;
+        align-self: center;
+    }
+}

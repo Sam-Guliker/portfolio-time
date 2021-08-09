@@ -1,0 +1,28 @@
+/* 
+ 
+  Note * the scss imported are base scss files.
+  If there are specific styles for components check the component > scss.
+
+*/
+// Partials
+@import "partials/reset.scss";
+
+// Modules and Variables
+@import "modules/mixins.scss";
+@import "modules/variables.scss";
+@import "modules/typography.scss";
+@import "partials/buttons.scss";
+@import "partials/grids.scss";
+@import "partials/base.scss";
+
+
+// Third-party
+
+// Components
+@import "components/Header.scss";
+@import "components/Navigation.scss";
+@import "components/ProductList.scss";
+@import "components/DetailContainer.scss";
+@import "components/Icon.scss";
+
+

@@ -1,0 +1,19 @@
+.detail-container {
+
+    @include media('>phone'){
+        display: flex;
+    }
+
+    .image-displayer {
+        @include media('>phone'){
+            width: calc( 50% - 70px);
+        }
+    }
+
+    .order-product {
+        @include media('>phone'){
+            width: calc( 50% - 70px);
+            padding-left: to-rem(20px);
+        }
+    }
+}

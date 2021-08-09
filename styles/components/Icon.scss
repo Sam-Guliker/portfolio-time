@@ -1,0 +1,10 @@
+.container-icons {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        display: flex;
+        align-self: center;
+        padding-right: to-rem(40px);
+    }
+}
