@@ -3,8 +3,8 @@ import Head from 'next/head';
 export default function Meta() {
     return (
     <Head>
-        <title> Ecommerce Webshop </title>
-        <meta name="description" content="A webshop to test some skills" />
+        <title> Sam Guliker Portfolio </title>
+        <meta name="description" content="A portfolio" />
         <link rel="icon" href="/favicon.ico" />
     </Head>
     )
