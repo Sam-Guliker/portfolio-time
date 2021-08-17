@@ -1,53 +1,50 @@
-
-import Meta from "../components/Meta"
-
-import Storyblok from "../lib/storyblok"
+import Head from "next/head"
+ 
+// The Storyblok Client & hook
+import Storyblok, { useStoryblok } from "../lib/storyblok"
 import DynamicComponent from '../components/DynamicComponent'
-
-export default function Home(props) {
-  const story = props.story
-
+ 
+export default function Home({ story, preview }) {
+  story = useStoryblok(story, preview)
   return (
-    <>
-      <Meta />
-
+    <div>
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+ 
       <header>
         <h1>
           { story ? story.name : 'My Site' }
         </h1>
       </header>
-
-      <DynamicComponent blok={story.content} />
-    </>
+ 
+      <main>
+        <DynamicComponent blok={story.content} />
+      </main>
+    </div>
   )
 }
-
+ 
 export async function getStaticProps(context) {
-  // the slug of the story
   let slug = "home"
-  // the storyblok params
   let params = {
-    version: "draft", // or 'published'
+    version: "draft", // or 'draft'
   }
  
-  // checks if Next.js is in preview mode
   if (context.preview) {
-    // loads the draft version
     params.version = "draft"
-    // appends the cache version to get the latest content
     params.cv = Date.now()
   }
  
-  // loads the story from the Storyblok API
   let { data } = await Storyblok.get(`cdn/stories/${slug}`, params)
  
-  // return the story from Storyblok and whether preview mode is active
   return {
     props: {
       story: data ? data.story : false,
       preview: context.preview || false
     },
-    revalidate: 10, 
+    revalidate: 3600, // revalidate every hour
   }
 }
 
