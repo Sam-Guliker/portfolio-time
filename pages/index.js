@@ -9,7 +9,7 @@ export default function Home({ story, preview }) {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title> Sam Guliker </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
  
@@ -48,5 +48,5 @@ export async function getStaticProps(context) {
   }
 }
 
-// https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-in-5-minutes
-// https://github.com/storyblok/react-next-boilerplate/tree/main/components
+// https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-in-5-minutes  |
+// https://github.com/storyblok/react-next-boilerplate/tree/main/components |
