@@ -1,27 +1,25 @@
-.navigation,
-.navigation_two {
+.navigation{
     font-family: $secondary-font;
-    align-self: flex-end;
+    text-transform: uppercase;
 
     @include media('>phone') {
         display: flex;
         flex-direction: row;
+        align-self: flex-end;
     }
 
     &__item {
-        font-size: to-rem(20px);
+        font-size: to-rem(12px);
         text-decoration: none;
 
-        @include media('>phone') {
-            padding-left: to-rem(40px);
+        border-bottom: 1px solid $primary-color;
+        margin-right: to-rem(20);
+        padding: to-rem(10) to-rem(0);
+
+        width: 100%;
+
+        &:last-of-type {
+            margin-right: to-rem(0);
         }
     }
-}
-
-.navigation_two {
-    padding-right: to-rem(50px);
-}
-
-.navigation_two__item {
-    font-size: to-rem(16px);
 }

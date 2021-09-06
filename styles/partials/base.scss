@@ -12,7 +12,7 @@
 html {
   font-size: 16px;
 
-  background-color: black;
+  background-color: $background-color;
 
   @include media(">desktop") {
     // everything calculated will scale fluidly after medium breakpoint
@@ -44,22 +44,6 @@ img {
   display: block;
 }
 
-a {
-  text-decoration: none; 
-  &:any-link {
-    color: #000000;
-  }
-}
-
 .container {
-    @include media('>phone'){
-      padding: 0 to-rem(70px);
-  }
-}
-
-.container--header {
-    @include media('>phone'){
-      display: flex;
-      justify-content: space-between;
-  }
+  margin: 0 to-rem(20);
 }

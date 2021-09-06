@@ -3,23 +3,25 @@ import Head from "next/head"
 // The Storyblok Client & hook
 import Storyblok, { useStoryblok } from "../lib/storyblok"
 import DynamicComponent from '../components/DynamicComponent'
+
+import Nav from '../components/Nav'
+import GithubItems from '../components/GithubItems'
  
 export default function Home({ story, preview }) {
   story = useStoryblok(story, preview)
   return (
-    <div>
+    <div className='container'>
       <Head>
         <title> Sam Guliker </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
  
       <header>
-        <h1>
-          { story ? story.name : 'My Site' }
-        </h1>
+        <Nav />
       </header>
  
       <main>
+        <GithubItems />
         <DynamicComponent blok={story.content} />
       </main>
     </div>

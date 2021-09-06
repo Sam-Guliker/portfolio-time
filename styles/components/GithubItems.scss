@@ -1,0 +1,31 @@
+.github-items-navigation {
+    position: fixed;
+    bottom: to-rem(20);
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 0 to-rem(20);
+
+    &__item {
+        position: relative;
+        padding: to-rem(6) to-rem(30);
+
+        &:hover {
+            color: $background-color;
+            background-color: $primary-color;
+
+            &:before {
+                content:'>';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+
+                left: to-rem(10);
+
+            }
+        }
+    }
+}

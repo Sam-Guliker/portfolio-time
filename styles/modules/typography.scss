@@ -9,9 +9,11 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $primary-font;
 }
 
-p, input, span {
+p, input, span, a {
     font-family: $primary-font;
     line-height: 1.4;
+    color: $primary-color;
+    text-decoration: none;
 }
 
 .heading-01 { 
@@ -21,7 +23,7 @@ p, input, span {
     color: $primary-color;
 
     @include media('>desktop') { 
-        font-size: to-rem(24px);
+        font-size: to-rem(24);
         text-align: left;
     }
 }
