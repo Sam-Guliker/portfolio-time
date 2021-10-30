@@ -17,15 +17,15 @@ export default function Home({ story, preview }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
  
-      <header>
+      <header className="header">
         <Nav />
       </header>
  
       <main>
         <GithubItems />
         <DynamicComponent blok={story.content} />
-        <VideoContainer />
       </main>
+      <VideoContainer />
     </div>
   )
 }

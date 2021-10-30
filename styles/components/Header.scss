@@ -1,4 +1,7 @@
 .header {
+    position: relative;
+    z-index: 3;
+    color: #fff;
 
     @include media('>phone') {
         padding: to-rem(20px) 0;
