@@ -27,7 +27,8 @@ svg {
 body {
   font-size: 1rem;
   line-height: 1.2;
-  background-color: $background-color;
+
+  z-index: 2;
 
   margin: auto;
 
@@ -46,4 +47,9 @@ img {
 
 .container {
   margin: 0 to-rem(20);
+}
+
+main {
+  position: relative;
+  z-index: 3;
 }

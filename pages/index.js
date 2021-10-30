@@ -3,6 +3,7 @@ import Head from "next/head"
 // The Storyblok Client & hook
 import Storyblok, { useStoryblok } from "../lib/storyblok"
 import DynamicComponent from '../components/DynamicComponent'
+import VideoContainer from '../components/VideoContainer'
 
 import Nav from '../components/Nav'
 import GithubItems from '../components/GithubItems'
@@ -23,6 +24,7 @@ export default function Home({ story, preview }) {
       <main>
         <GithubItems />
         <DynamicComponent blok={story.content} />
+        <VideoContainer />
       </main>
     </div>
   )
