@@ -3,6 +3,8 @@ import Teaser from './Teaser'
 import Grid from './Grid'
 import Feature from './Feature'
 import Page from './Page'
+import ExternalLink from './ExternalLink'
+import Header from './Header'
  
 // resolve Storyblok components to Next.js components
 const Components = {
@@ -10,6 +12,8 @@ const Components = {
   'grid': Grid,
   'feature': Feature,
   'page': Page,
+  'ExternalLink': ExternalLink,
+  'header': Header,
 }
  
 const DynamicComponent = ({blok}) => {

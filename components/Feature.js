@@ -1,9 +1,7 @@
-import React from 'react'
- 
-const Feature = ({ blok }) => (
+export default function Feature ({ blok }) {
+  return(
     <div className="column feature">
       {blok.name}
     </div>
-)
- 
-export default Feature
+  )
+}
