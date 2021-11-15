@@ -7,22 +7,27 @@ import VideoContainer from '../components/VideoContainer'
 
 import Nav from '../components/Nav'
 import GithubItems from '../components/GithubItems'
+import MouseCursor from "../components/MouseCursor"
+import LoadingScreen from "../components/LoadingScreen"
+
  
 export default function Home({ story, preview }) {
   story = useStoryblok(story, preview)
   return (
-    <div className='container'>
+    <>
       <Head>
         <title> Sam Guliker </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
- 
-      <main>
-        {/* <GithubItems /> */}
-        <DynamicComponent blok={story.content} />
-      </main>
-      <VideoContainer />
-    </div>
+      <LoadingScreen />
+      <MouseCursor />
+      <div className='container'>
+        <main>
+          <DynamicComponent blok={story.content} />
+        </main>
+        <VideoContainer />
+      </div>
+    </>
   )
 }
  

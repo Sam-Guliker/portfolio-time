@@ -1,0 +1,12 @@
+.mouse-cursor {
+    cursor: none;
+    width: 6px;
+    height: 6px;
+    background-color: #ECB916;
+
+    border-radius: 50% 50%;
+
+    transition: transform;
+    transition-timing-function: ease;
+
+}

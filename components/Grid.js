@@ -1,7 +1,7 @@
 import React from 'react'
 import DynamicComponent from '../components/DynamicComponent'
  
-const Grid = ({ blok }) => {
+export default function ({ blok }) {
   return (
     <div className="grid">
       {blok.columns.map((blok) =>
@@ -10,5 +10,3 @@ const Grid = ({ blok }) => {
     </div>
   )
 }
- 
-export default Grid
