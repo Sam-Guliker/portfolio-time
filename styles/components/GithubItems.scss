@@ -1,27 +1,24 @@
 .github-items-navigation {
     position: fixed;
-    bottom: to-rem(20);
     left: 0;
-
+    
     display: flex;
     flex-direction: column;
-
     width: 100%;
-    padding: 0 to-rem(20);
-
-    
-
 
     &__item {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        
         position: relative;
-        padding: to-rem(6) to-rem(30);
+        padding: to-rem(10) 0;
 
-        &:hover {
-            cursor: pointer;
+        &:hover,
+        &:hover p,
+        &:hover span {
             background: $primary-color;
+            color: $background-color;
         }
     
     }

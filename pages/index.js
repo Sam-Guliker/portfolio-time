@@ -5,11 +5,11 @@ import Head from "next/head"
 // The Storyblok Client & hook
 import Storyblok, { useStoryblok } from "../lib/storyblok"
 import DynamicComponent from '../components/DynamicComponent'
-import VideoContainer from '../components/VideoContainer'
 
 // Componenets
 import LoadingScreen from "../components/LoadingScreen"
- 
+import VideoContainer from '../components/VideoContainer'
+import MouseCursor from '../components/MouseCursor';
 export default function Home({ story, preview }) {
 
   const [currentKey, setCurrentKey] = useState('hi')
@@ -32,6 +32,7 @@ export default function Home({ story, preview }) {
         <title> Sam Guliker </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <MouseCursor />
       <LoadingScreen />
       <div className='container'>
         <DynamicComponent setCurrentKey={setCurrentKey} currentKey={currentKey} blok={story.content} />

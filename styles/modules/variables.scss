@@ -6,8 +6,16 @@ $background-color: #16191b;
 $paragraph-color: #000;
 $background-list-color: #FFFFFF;
 $primary-color: #ECB916;
+$base-font-size: 14px;
 
 // Typography
 $primary-font:  'Montserrat', sans-serif; 
 // $secondary-font: 'Noto Sans JP', sans-serif;
 $secondary-font: 'Lato', sans-serif;
+
+// font weight:
+$base-light-font-weight: 100;
+$base-lighter-font-weight: 300;
+$base-font-weight: 400;
+$base-semibold-font-weight:500;
+$base-bold-font-weight: 700;

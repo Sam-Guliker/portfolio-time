@@ -1,5 +1,6 @@
 .mouse-cursor {
     position: absolute;
+    display: block;
     width: 6px;
     height: 6px;
     background-color: #ECB916;
@@ -10,5 +11,8 @@
     transition-timing-function: ease;
 
     z-index: 999999;
+
+    user-select: none;
+    pointer-events: none;
 
 }

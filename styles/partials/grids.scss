@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 3rem;
+    bottom: to-rem(20);
 
     border-bottom: 1px solid $primary-color;
     width: 100%;
-    padding-bottom: 1rem;
+    padding-bottom: to-rem(10px);
 }
