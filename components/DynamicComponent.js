@@ -16,7 +16,7 @@ const Components = {
   'header': Header,
 }
  
-const DynamicComponent = ({blok}) => {
+const DynamicComponent = ({blok, currentKey, setCurrentKey}) => {
   // check if component is defined above
   if (typeof Components[blok.component] !== 'undefined') {
     const Component = Components[blok.component]

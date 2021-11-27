@@ -53,10 +53,5 @@ img {
 main {
   position: relative;
   z-index: 3;
-}
-
-a {
-  &:hover {
-    cursor: none;
-  }
+  height: 100vh;
 }

@@ -1,5 +1,5 @@
 .mouse-cursor {
-    cursor: none;
+    position: absolute;
     width: 6px;
     height: 6px;
     background-color: #ECB916;
@@ -8,5 +8,7 @@
 
     transition: transform;
     transition-timing-function: ease;
+
+    z-index: 999999;
 
 }

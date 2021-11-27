@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import Head from "next/head"
  
 // The Storyblok Client & hook
@@ -5,13 +7,24 @@ import Storyblok, { useStoryblok } from "../lib/storyblok"
 import DynamicComponent from '../components/DynamicComponent'
 import VideoContainer from '../components/VideoContainer'
 
-import Nav from '../components/Nav'
-import GithubItems from '../components/GithubItems'
-import MouseCursor from "../components/MouseCursor"
+// Componenets
 import LoadingScreen from "../components/LoadingScreen"
-
  
 export default function Home({ story, preview }) {
+
+  const [currentKey, setCurrentKey] = useState('hi')
+
+  const keyPressHandler = (e) => {
+    console.log(e)
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', keyPressHandler);
+    return () => {
+      document.removeEventListener('keydown', keyPressHandler);
+    };
+  });
+
   story = useStoryblok(story, preview)
   return (
     <>
@@ -20,11 +33,8 @@ export default function Home({ story, preview }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <LoadingScreen />
-      <MouseCursor />
       <div className='container'>
-        <main>
-          <DynamicComponent blok={story.content} />
-        </main>
+        <DynamicComponent setCurrentKey={setCurrentKey} currentKey={currentKey} blok={story.content} />
         <VideoContainer />
       </div>
     </>
@@ -52,6 +62,3 @@ export async function getStaticProps(context) {
     revalidate: 3600, // revalidate every hour
   }
 }
-
-// https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-in-5-minutes  |
-// https://github.com/storyblok/react-next-boilerplate/tree/main/components |
