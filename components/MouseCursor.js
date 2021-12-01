@@ -1,8 +1,10 @@
 import { useState,useEffect } from 'react';
 
-export default function MouseCursor() {
-    const [xPos, setX] = useState(0);
+export default function MouseCursor() {    
+    const [xPos, setX] = useState(0)
     const [yPos, setY] = useState(0)
+
+    const minimumScreenSize = 768
 
     useEffect(() => {
         const update = (e) => {

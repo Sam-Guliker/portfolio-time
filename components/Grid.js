@@ -5,7 +5,7 @@ export default function ({ blok, currentKey, setCurrentKey }) {
   return (
     <div className="grid list-items">
       {blok.columns.map((blok) =>
-        (<DynamicComponent blok={blok} key={blok._uid}/>)
+        (<DynamicComponent blok={blok} key={blok._uid} data-type='view more'/>)
       )}
     </div>
   )

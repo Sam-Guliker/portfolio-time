@@ -10,19 +10,48 @@ import DynamicComponent from '../components/DynamicComponent'
 import LoadingScreen from "../components/LoadingScreen"
 import VideoContainer from '../components/VideoContainer'
 import MouseCursor from '../components/MouseCursor';
+
+/*
+
+  1. Use ref on a main container to get all the tags items/tags
+
+  2. Create a function that loops through all the strings and keeps changing them for a second.
+
+  3. Only use the effect on load for now.
+
+  4. Optional* use the function on hover of elements.
+
+*/
+
 export default function Home({ story, preview }) {
-
   const [currentKey, setCurrentKey] = useState('hi')
+  const allLinkTags = document.getElementsByTagName('a')
+  const randomLetters = '*+-/@_$[%£!XO1&>abcdefghijklmnop'
 
-  const keyPressHandler = (e) => {
-    console.log(e)
+  // reset original text
+
+  const originalTextFunction = (allLinkTags) => {
+
+    
   }
 
+  const letterTransformFunction = (element, ) => {
+    const string = element.textContent
+
+  }
+
+  // manipulate text
+
+
   useEffect(() => {
-    document.addEventListener('keydown', keyPressHandler);
-    return () => {
-      document.removeEventListener('keydown', keyPressHandler);
-    };
+    for (let i = 0; i < allLinkTags.length; i++) {
+      const element = allLinkTags[i];
+      
+      if(element.textContent != '') {
+        letterTransformFunction(element)
+      }
+      
+    }
   });
 
   story = useStoryblok(story, preview)
