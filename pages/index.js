@@ -25,7 +25,7 @@ import MouseCursor from '../components/MouseCursor';
 
 export default function Home({ story, preview }) {
   const [currentKey, setCurrentKey] = useState('hi')
-  const allLinkTags = document.getElementsByTagName('a')
+  // const allLinkTags = document.getElementsByTagName('a')
   const randomLetters = '*+-/@_$[%£!XO1&>abcdefghijklmnop'
 
   // reset original text
@@ -44,14 +44,14 @@ export default function Home({ story, preview }) {
 
 
   useEffect(() => {
-    for (let i = 0; i < allLinkTags.length; i++) {
-      const element = allLinkTags[i];
+    // for (let i = 0; i < allLinkTags.length; i++) {
+    //   const element = allLinkTags[i];
       
-      if(element.textContent != '') {
-        letterTransformFunction(element)
-      }
+    //   if(element.textContent != '') {
+    //     letterTransformFunction(element)
+    //   }
       
-    }
+    // }
   });
 
   story = useStoryblok(story, preview)
