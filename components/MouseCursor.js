@@ -8,8 +8,8 @@ export default function MouseCursor() {
 
     useEffect(() => {
         const update = (e) => {
-            setX(e.x)
-            setY(e.y)
+            setX(e.pageX  || e.clientX)
+            setY(e.pageY || e.clientY)
           }
           window.addEventListener('mousemove', update)
           window.addEventListener('touchmove', update)

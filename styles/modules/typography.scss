@@ -12,14 +12,17 @@ p, input, span, a {
 }
 
 .heading-01 { 
+    font-family: $headline-font;
     font-size: to-rem(32px);
     font-weight: 400;
 
     color: $primary-color;
+    
 
     @include media('>desktop') { 
-        font-size: to-rem(24);
+        font-size: to-rem(90px);
         text-align: left;
+        line-height: 0.9;
     }
 }
 

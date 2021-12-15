@@ -4,8 +4,8 @@ import Grid from './Grid'
 import Feature from './Feature'
 import Page from './Page'
 import ExternalLink from './ExternalLink'
-import Header from './Header'
- 
+import introText from './IntroText' 
+
 // resolve Storyblok components to Next.js components
 const Components = {
   'teaser': Teaser,
@@ -13,7 +13,7 @@ const Components = {
   'feature': Feature,
   'page': Page,
   'ExternalLink': ExternalLink,
-  'header': Header,
+  'introText': introText,
 }
  
 const DynamicComponent = ({blok, currentKey, setCurrentKey}) => {
@@ -21,7 +21,7 @@ const DynamicComponent = ({blok, currentKey, setCurrentKey}) => {
   if (typeof Components[blok.component] !== 'undefined') {
     const Component = Components[blok.component]
     // wrap with SbEditable for visual editing
-    return (<SbEditable content={blok}><Component blok={blok} /></SbEditable>)
+    return (<SbEditable content={blok}><Component key={currentKey} blok={blok} /></SbEditable>)
   }
   
   // fallback if the component doesn't exist
