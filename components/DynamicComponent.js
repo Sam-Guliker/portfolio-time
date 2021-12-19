@@ -5,6 +5,8 @@ import Feature from './Feature'
 import Page from './Page'
 import ExternalLink from './ExternalLink'
 import introText from './IntroText' 
+import Footer from './Footer' 
+
 
 // resolve Storyblok components to Next.js components
 const Components = {
@@ -14,6 +16,7 @@ const Components = {
   'page': Page,
   'ExternalLink': ExternalLink,
   'introText': introText,
+  'footer': Footer,
 }
  
 const DynamicComponent = ({blok, currentKey, setCurrentKey}) => {

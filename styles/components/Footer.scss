@@ -1,0 +1,18 @@
+.footer {
+    @include media('>desktop') { 
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footer-text {
+        padding-bottom: to-rem(30px);
+        @include media('>desktop') { 
+            padding-left: to-rem(300px);
+            padding-bottom: to-rem(120px);
+
+            &:first-of-type {
+                padding-left: 0;
+            }
+        }
+    }
+}

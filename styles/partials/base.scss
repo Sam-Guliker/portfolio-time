@@ -50,7 +50,7 @@ img {
 }
 
 .container {
-  padding: 0 to-rem(20px);
+  padding: to-rem(20px);
 
   @include media('>desktop') { 
     padding: 0 to-rem(120px);
@@ -67,10 +67,19 @@ main {
 a:hover {
   cursor: none;
 }
+
 .section {
-  padding-bottom: to-rem(30px);
+  padding-bottom: to-rem(66px);
+
+  &:first-of-type {
+    padding-top: to-rem(0px);
+  }
 
   @include media('>desktop') { 
+    &:first-of-type {
+      padding-top: 0;
+    }
+
     padding-bottom: to-rem(190px);
   }
 }
