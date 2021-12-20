@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { TweenMax, Power3 } from "gsap";
 
-export default function LoadingScreen() {
+export default function LoadingScreen({isAnimaiting, setIsAnimating}) {
     const text = React.createRef();
     const bar = React.createRef();
     const container = React.createRef();
@@ -22,7 +22,7 @@ export default function LoadingScreen() {
                     i=0
                 } else if (width === 100) {
                     TweenMax.to(text.current, 0.3, {opacity: 0, delay: 0.3})
-                    TweenMax.to(bar.current, 0.3, {opacity: 0, delay: 0.3})
+                    TweenMax.to(bar.current, 0, {opacity: 0, delay: 0.9})
                     TweenMax.to(overlay.current, 1.2, { 
                         autoAlpha: 1,
                         top: '-100%', 
@@ -32,7 +32,7 @@ export default function LoadingScreen() {
 
                     setTimeout(() => {
                         TweenMax.to(container.current, 3, {autoAlpha: 0})
-                        }, 3000)
+                        }, 2000)
                     clearInterval(identity)
                     i=0
                 }

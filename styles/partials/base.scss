@@ -50,7 +50,9 @@ img {
 }
 
 .container {
+  position: relative;
   padding: to-rem(20px);
+  z-index: 4;
 
   @include media('>desktop') { 
     padding: 0 to-rem(120px);
@@ -70,6 +72,7 @@ a:hover {
 
 .section {
   padding-bottom: to-rem(66px);
+  z-index: 4;
 
   &:first-of-type {
     padding-top: to-rem(0px);

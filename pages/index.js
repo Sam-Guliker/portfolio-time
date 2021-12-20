@@ -12,13 +12,19 @@ import VideoContainer from '../components/VideoContainer'
 import MouseCursor from '../components/MouseCursor';
 
 export default function Home({ story, preview }) {
-  const [currentKey, setCurrentKey] = useState('')
   story = useStoryblok(story, preview)
+
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [currentKey, setCurrentKey] = useState('')
+
   const container = React.createRef();
+  const mainItems = React.createRef()
 
   useEffect(() => { 
+    TweenMax.set(mainItems.current, {autoAlpha: 0})
     TweenMax.set(container.current, {overflow: 'hidden', height: '100vh'})
-    TweenMax.set(container.current, {overflow: 'initial', height: 'initial', delay: 2.6})
+    TweenMax.set(container.current, {overflow: 'initial', height: 'initial', delay: 2.6}) 
+    TweenMax.to(mainItems.current, 1, {autoAlpha: 1, delay: 2.6})    
   })
 
   return (
@@ -28,8 +34,8 @@ export default function Home({ story, preview }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MouseCursor />
-      <LoadingScreen />
-      <div className='container'>
+      <LoadingScreen isAnimating={isAnimating} setIsAnimating={setIsAnimating}/>
+      <div className='container' ref={mainItems}>
         <DynamicComponent setCurrentKey={setCurrentKey} currentKey={currentKey} blok={story.content} />
       </div>
       <VideoContainer />
