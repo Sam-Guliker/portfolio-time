@@ -13,8 +13,6 @@ import MouseCursor from '../components/MouseCursor';
 
 export default function Home({ story, preview }) {
   story = useStoryblok(story, preview)
-
-  const [isAnimating, setIsAnimating] = useState(false)
   const [currentKey, setCurrentKey] = useState('')
 
   const container = React.createRef();
@@ -34,7 +32,7 @@ export default function Home({ story, preview }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MouseCursor />
-      <LoadingScreen isAnimating={isAnimating} setIsAnimating={setIsAnimating}/>
+      <LoadingScreen/>
       <div className='container' ref={mainItems}>
         <DynamicComponent setCurrentKey={setCurrentKey} currentKey={currentKey} blok={story.content} />
       </div>
