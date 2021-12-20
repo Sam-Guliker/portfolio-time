@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { TweenMax, Power3 } from "gsap";
 import Head from "next/head"
  
 // The Storyblok Client & hook
@@ -14,11 +14,15 @@ import MouseCursor from '../components/MouseCursor';
 export default function Home({ story, preview }) {
   const [currentKey, setCurrentKey] = useState('')
   story = useStoryblok(story, preview)
+  const container = React.createRef();
 
-  console.log(story)
+  useEffect(() => { 
+    TweenMax.set(container.current, {overflow: 'hidden', height: '100vh'})
+    TweenMax.set(container.current, {overflow: 'initial', height: 'initial', delay: 2.6})
+  })
 
   return (
-    <>
+    <div className='app' ref={container}>
       <Head>
         <title> Sam Guliker </title>
         <link rel="icon" href="/favicon.ico" />
@@ -27,9 +31,9 @@ export default function Home({ story, preview }) {
       <LoadingScreen />
       <div className='container'>
         <DynamicComponent setCurrentKey={setCurrentKey} currentKey={currentKey} blok={story.content} />
-        <VideoContainer />
       </div>
-    </>
+      <VideoContainer />
+    </div>
   )
 }
  

@@ -5,11 +5,20 @@
     width: 100vw;
     height: 100vh;
     z-index: 200;
-    background-color: $background-color;
+    .overlay-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        top: 0;
+        left: 0;
+        opacity: 1;
+    }
 
     .heading-container {
         height: 100%;
         display: flex;
+        width: 100%;
         flex-direction: column;
         color: $primary-color;
         
