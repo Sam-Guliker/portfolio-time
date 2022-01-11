@@ -4,15 +4,30 @@
         flex-direction: row;
     }
 
+    .footer-contacts {
+        display: flex;
+        flex-direction: column;
+
+        @include media('>desktop') { 
+            padding-left: to-rem(400px);
+        }
+    }
+
     .footer-text {
         padding-bottom: to-rem(30px);
+
         @include media('>desktop') { 
-            padding-left: to-rem(300px);
-            padding-bottom: to-rem(120px);
+            padding-bottom: to-rem(20px);
 
             &:first-of-type {
                 padding-left: 0;
             }
+        }
+
+        svg {
+            width: to-rem(15px);
+            margin-right: 10px;
+            vertical-align: middle;
         }
     }
 }

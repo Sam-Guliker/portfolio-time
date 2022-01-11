@@ -12,7 +12,7 @@ export default function ExternalLink ({blok, currentKey, setCurrentKey}) {
     return (
         <Link href={blok.external_link.url}>
             <a ref={itemRef} className="heading-01" key={blok._uid}>
-                <p>{capitalizeWords(blok.name)}</p>
+                <p className="project-link">{capitalizeWords(blok.name)}</p>
                 {/* <span>{capitalizeWords('view more')}</span> */}
             </a>
         </Link>

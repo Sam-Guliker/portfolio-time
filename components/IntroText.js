@@ -1,6 +1,6 @@
 import { TweenMax,Power3 } from "gsap";
 
-  export default function IntroText ({ blok }) {
+export default function IntroText ({ blok }) {
   return (
     <div className="section">
       <p>{blok.section}</p>

@@ -1,6 +1,7 @@
 @import '../modules/variables.scss';
 
 * {
+  cursor: none;
   box-sizing: border-box;
 
   &::before,
@@ -26,6 +27,7 @@ svg {
 
 body {
   cursor: none;
+
   font-size: to-rem(14px);
   font-weight: $base-lighter-font-weight;
 
