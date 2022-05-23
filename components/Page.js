@@ -1,11 +1,17 @@
 import DynamicComponent from "./DynamicComponent";
  
-const Page = ({ blok }) => (
+const Page = ({ blok, hover, setHover, hoverImage, setHoverImage }) => (
   <main>
-    {console.log(blok.body)}
     {blok.body
       ? blok.body.map((blok) => (
-          <DynamicComponent blok={blok} key={blok._uid} />
+        <DynamicComponent 
+          blok={blok} 
+          hover={hover} 
+          setHover={setHover} 
+          key={blok._uid} 
+          hoverImage={hoverImage}
+          setHoverImage={setHoverImage}
+          />
         ))
       : null}
   </main>

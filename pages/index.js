@@ -13,7 +13,8 @@ import MouseCursor from '../components/MouseCursor';
 
 export default function Home({ story, preview }) {
   story = useStoryblok(story, preview)
-  const [currentKey, setCurrentKey] = useState('')
+  const [hover, setHover] = useState(false)
+  const [hoverImage, setHoverImage ] = useState('')
 
   const container = React.createRef();
   const mainItems = React.createRef()
@@ -23,19 +24,39 @@ export default function Home({ story, preview }) {
     TweenMax.set(container.current, {overflow: 'hidden', height: '100vh'})
     TweenMax.set(container.current, {overflow: 'initial', height: 'initial', delay: 2.6}) 
     TweenMax.to(mainItems.current, 1, {autoAlpha: 1, delay: 2.6})    
-  })
+  }, [])
+
+  // console.log(hoverImage)
 
   return (
+
+    // Context api
+
+    /*
+
+    <ParentComponent >
+      <ChildComponent props={props} />
+    </ParentComponent>
+
+    */
+
+   
     <div className='app' ref={container}>
       <Head>
         <title> Sam Guliker </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MouseCursor />
-      <LoadingScreen/>
       <div className='container' ref={mainItems}>
-        <DynamicComponent setCurrentKey={setCurrentKey} currentKey={currentKey} blok={story.content} />
+        <MouseCursor hover={hover} hoverImage={hoverImage}/>
+        <DynamicComponent 
+          hover={hover} 
+          setHover={setHover} 
+          hoverImage={hoverImage}
+          setHoverImage={setHoverImage}
+          blok={story.content} 
+        />
       </div>
+      <LoadingScreen/>
       <VideoContainer />
     </div>
   )

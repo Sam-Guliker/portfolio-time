@@ -88,3 +88,27 @@ a:hover {
     padding-bottom: to-rem(190px);
   }
 }
+
+.project-link {
+  @include media('>phone') {
+      border-bottom: 1px solid $white;
+      color: transparent;
+      transition: 0.4s color ease;
+      -webkit-text-stroke: 2px $white;
+
+      &:hover {
+        color: $white;
+      }
+  }
+}
+.placeholder, .placeholder img {
+  width: 100%;
+  height: 100%;
+
+  padding-bottom: 0;
+}
+
+.big-image {
+  object-fit: cover;
+  display: block;
+}

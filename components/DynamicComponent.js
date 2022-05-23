@@ -19,12 +19,12 @@ const Components = {
   'footer': Footer,
 }
  
-const DynamicComponent = ({blok, currentKey, setCurrentKey}) => {
+const DynamicComponent = ({blok, hover, setHover, hoverImage, setHoverImage}) => {
   // check if component is defined above
   if (typeof Components[blok.component] !== 'undefined') {
     const Component = Components[blok.component]
     // wrap with SbEditable for visual editing
-    return (<SbEditable content={blok}><Component key={currentKey} blok={blok} /></SbEditable>)
+    return (<SbEditable content={blok} hover={hover} setHover={setHover} hoverImage={hoverImage} setHoverImage={setHoverImage}><Component hover={hover} setHover={setHover} blok={blok} hoverImage={hoverImage} setHoverImage={setHoverImage} /></SbEditable>)
   }
   
   // fallback if the component doesn't exist

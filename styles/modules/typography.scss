@@ -11,14 +11,6 @@ p, input, span, a {
     text-decoration: none;
 }
 
-
-.project-link:hover {
-    @include media('>desktop') { 
-        transition: 0.2s color ease-in-out;
-        color: $background-color;
-    }   
-}
-
 .heading-01 { 
     font-family: $headline-font;
     font-size: to-rem(36px);

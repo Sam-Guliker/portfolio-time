@@ -1,11 +1,7 @@
 .mouse-cursor {
-    position: absolute;
-    display: block;
-    width: 6px;
-    height: 6px;
+    width: 9px;
+    height: 9px;
     background-color: $primary-color;
-
-    border-radius: 50% 50%;
 
     transition: transform;
     transition-timing-function: ease;
@@ -15,4 +11,13 @@
     user-select: none;
     pointer-events: none;
     cursor: none;
+
+    overflow: hidden;
+
+    .active {
+        transition: 0.2s transform ease-in-out;
+        transform: scale(5); 
+    }
 }
+
+// https://webdesign.tutsplus.com/tutorials/cursor-hover-effect-with-javascript-mouse-events-and-gsap--cms-38899
