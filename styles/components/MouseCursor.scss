@@ -14,10 +14,6 @@
 
     overflow: hidden;
 
-    .active {
-        transition: 0.2s transform ease-in-out;
-        transform: scale(5); 
-    }
 }
 
 // https://webdesign.tutsplus.com/tutorials/cursor-hover-effect-with-javascript-mouse-events-and-gsap--cms-38899

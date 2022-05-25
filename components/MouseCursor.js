@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { gsap } from "gsap";
 
 import useWindowSize from '../lib/resizer'
 
@@ -12,22 +13,26 @@ export default function MouseCursor({hover, hoverImage}) {
   console.log(hover)
 
   useEffect(() => {
-    if(hover) {
+    const imageWrapper = document.createElement("div")
+    const image = document.createElement("img")
 
-      // const heightElement = document.getElementsByClassName('')
+    if(hover) {
+      const tl = gsap.timeline()
+
+      console.log(tl)
+
+      tl
+         .set(image, { attr: {src: `${hoverImage}`}})
+         .from(mouse.current ,{scale:0.3})
+         .to(mouse.current, {scale:1})
+         .set(mouse.current, {x: '-50%', y: '-50%', borderRadius: '20px'})
 
       mouse.current.style.width = "960px"
       mouse.current.style.height = "auto"
 
-      mouse.current.style.left = `${xPos} - 480px`
-      mouse.current.style.top = `${yPos} - 240px`
-
-      
       if(!mouse.current.hasChildNodes()) {
-        const imageWrapper = document.createElement("div")
-        const image = document.createElement("img")
         image.id = 'hoverImage'
-        image.src = `${hoverImage}`
+        // image.src = `${hoverImage}`
 
         mouse.current.appendChild(imageWrapper)
         imageWrapper.appendChild(image)
@@ -38,26 +43,19 @@ export default function MouseCursor({hover, hoverImage}) {
       } else {
         const updateImage = document.getElementById('hoverImage')
         if(updateImage){
-
           updateImage.src=hoverImage
         }
-        console.log(updateImage)
-
       }
-    } else {
-      
     }
 
-    // if(!hover) {
-    //   if(mouse.current.hasChildNodes()){
-    //     mouse.current.removeChild()
-    //   }
-    // }
+    if(hover === false & mouse?.current?.hasChildNodes()) {
+      const imageContainer = document.getElementsByClassName('placeholder')[0]
+      console.log(imageContainer)
+      imageContainer.remove()
 
-    // if(!hover) {
-    //   mouse.current.style.width = "8px"
-    //   mouse.current.style.height = "8px"
-    // }
+      mouse.current.style.width = '9px';
+      mouse.current.style.height = '9px'
+    }
 
     const updateCursor = (e) => {
         setX(e.pageX  || e.clientX)
