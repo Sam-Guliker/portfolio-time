@@ -47,6 +47,11 @@ img {
   max-width: 100%;
   padding-bottom: to-rem(20px);
 }
+
+.app {
+  position: relative;
+}
+
 .word-break {
   display: block;
 }
@@ -111,4 +116,25 @@ a:hover {
 .big-image {
   object-fit: cover;
   display: block;
+}
+
+.arrow-down {
+  width: 25px;
+  padding-bottom: 0;
+}
+
+.scroll-down {
+  font-family: $primary-font;
+  font-size: 0.6;
+  color: $white;
+}
+
+.scroll-down-container {
+  position: absolute;
+  bottom: 12rem;
+  transform: translateX(-50%);
+  left: 50%;
+
+  display: flex;
+  align-items: center;
 }

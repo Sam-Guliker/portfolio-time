@@ -9,29 +9,27 @@ export default function MouseCursor({hover, hoverImage}) {
   const [xPos, setX] = useState(0)
   const [yPos, setY] = useState(0)
   const mouse = useRef(null)
-
-  console.log(hover)
+  const tl = gsap.timeline()
 
   useEffect(() => {
     const imageWrapper = document.createElement("div")
     const image = document.createElement("img")
 
     if(hover) {
-      const tl = gsap.timeline()
-
-      console.log(tl)
-
-      tl
-         .set(image, { attr: {src: `${hoverImage}`}})
-         .from(mouse.current ,{scale:0.3})
-         .to(mouse.current, {scale:1})
-         .set(mouse.current, {x: '-50%', y: '-50%', borderRadius: '20px'})
-
-      mouse.current.style.width = "960px"
-      mouse.current.style.height = "auto"
 
       if(!mouse.current.hasChildNodes()) {
         image.id = 'hoverImage'
+
+        tl
+          .set(mouse.current, {x: '-50%', y: '-50%', borderRadius: '20px'})
+          .set(image, { attr: {src: `${hoverImage}`}})
+          .from(mouse.current ,{scale:0.3})
+          .to(mouse.current, {scale:1,  duration: 0.3,  ease: "expo.out"})
+
+
+        mouse.current.style.width = "960px"
+        mouse.current.style.height = "auto"
+
         // image.src = `${hoverImage}`
 
         mouse.current.appendChild(imageWrapper)
@@ -75,6 +73,7 @@ export default function MouseCursor({hover, hoverImage}) {
     <>
       {size.width > tabletSize && 
           <div ref={mouse} className="mouse-cursor" style={{left: `calc(${xPos}px - 4px)`, top: `calc(${yPos}px - 4px)`, position: 'absolute'}}>
+            
           </div>
       }
     </>

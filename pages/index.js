@@ -10,6 +10,7 @@ import DynamicComponent from '../components/DynamicComponent'
 import LoadingScreen from "../components/LoadingScreen"
 import VideoContainer from '../components/VideoContainer'
 import MouseCursor from '../components/MouseCursor';
+import ScrollDownComponent from '../components/ScrollDownComponent';
 
 export default function Home({ story, preview }) {
   story = useStoryblok(story, preview)
@@ -46,7 +47,10 @@ export default function Home({ story, preview }) {
         <title> Sam Guliker </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
       <div className='container' ref={mainItems}>
+      <ScrollDownComponent/>
+
         <MouseCursor hover={hover} hoverImage={hoverImage}/>
         <DynamicComponent 
           hover={hover} 
